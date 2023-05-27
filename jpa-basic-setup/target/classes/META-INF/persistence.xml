@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd"
+    version="2.2">
+
+    <persistence-unit name="YourPersistenceUnitName" transaction-type="RESOURCE_LOCAL">
+        <class>com.aniketmore.Message</class>
+        <properties>
+            <!-- JPA Provider (Hibernate) properties -->
+            <property name="javax.persistence.provider"
+                value="org.hibernate.jpa.HibernatePersistenceProvider" />
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />
+            <property name="hibernate.hbm2ddl.auto" value="update" />
+            <!-- Other Hibernate properties -->
+
+            <!-- Database connection properties -->
+            <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
+            <property name="javax.persistence.jdbc.url"
+                value="jdbc:postgresql://localhost:5432/test1" />
+            <property name="javax.persistence.jdbc.user" value="postgres" />
+            <property name="javax.persistence.jdbc.password" value="postgres" />
+
+        </properties>
+    </persistence-unit>
+</persistence>
